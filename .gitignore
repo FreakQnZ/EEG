@@ -1,0 +1,5 @@
+.venv
+training_data.pkl
+__pycache__/
+.idea
+.DS_Store
