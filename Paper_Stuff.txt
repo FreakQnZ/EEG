@@ -1,0 +1,23 @@
+Pros Of Discrete (The paper method model)
+1. Interpretability: The results are easy to understand ("The subject is $90\%$ Happy").
+2. Familiarity: Most humans instinctively categorize emotions this way (e.g., "basic emotions" like Happy, Sad, Angry).
+3. Direct Task: It directly answers the question, "What specific emotion is the person feeling?"
+
+Cons of the Discrete Model
+1. Arbitrary Boundaries: Real-world emotions are rarely distinct categories. How different is "Slightly Happy" from "Content"? The model must force a decision at the boundary.
+2. Missing Nuance: The model cannot express how happy, sad, or angry the person is. It loses the intensity information.
+3. "Calm" vs. "Neutral" Challenge: As mentioned, emotions like Calm (low arousal, positive/neutral valence) and Neutral (very low arousal, mid-valence) are physiologically very similar. Your model will have a hard time distinguishing them, and a misclassification will be heavily penalized by the loss function, even if the EEG pattern was very close.
+4. Limited Scope: You are limited to predicting only the $\mathbf{5}$ classes you've trained on.
+
+https://www.psychomedia.it/rapaport-klein/Peterson-05_DevelopPsychopathol10.pdf
+
+mappings - https://pmc.ncbi.nlm.nih.gov/articles/PMC5761962/
+
+| Your Label | Emotion | Valence | Arousal |
+| ---------- | ------- | ------- | ------- |
+| 0          | Neutral | 0.0     | 0.0     |
+| 1          | Sadness | -0.40   | -0.20   |
+| 2          | Anger   | -0.51   | 0.59    |
+| 3          | Happy   | 0.30    | 0.10    |
+| 4          | Calm    | 0.20    | -0.30   |
+
